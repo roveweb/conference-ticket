@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'inconsolata';
+  src: url(fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+  --Gradient-text: hsl(7, 86%, 67%), hsl(0, 0%, 100%);
+}
+
+body {
+ font-family: 'inconsolata';
+ color: var(--Neutral-0);
+ background-image: url('images/pattern-lines.svg'), url('images/background-mobile.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+ @media (min-width: 768px)  {
+  background-image: url('images/pattern-lines.svg'), url('images/background-tablet.png');
+}
+
+ @media (min-width: 1024px)  {
+  background-image: url('images/pattern-lines.svg'), url('images/background-desktop.png');
+}
+}
+
+.center {
+  max-width: 700px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.title {
+  text-align: center;
+  text-wrap: balance;
+
+  span {
+    background-image: linear-gradient(90deg, var(--Gradient-text));
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (min-width: 1024px)  {
+    font-size: 3rem;
+    text-wrap: auto;
+ }
+}
+
+.subtitle {
+  text-align: center;
+  text-wrap: balance;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  color: var(--Neutral-500);
+
+  span {
+    color: var(--Orange-500);
+  }
+}
+
+.upload-section {
+  margin: 0 2rem;
+
+  .upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    border: 2px dashed var(--Neutral-500);
+    padding: 1.5rem 0;
+    background-color: var(--Neutral-900);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+
+    img {
+      background-color: var(--Neutral-700);
+      border-radius: 0.5rem;
+      padding: 0.2rem;
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+    }
+
+    P {
+      color: var(--Neutral-500);
+      font-size: 1.2rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  .draggin {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  div {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--Neutral-500);
+  }
+}
+
+.form-section {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--Neutral-500);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: var(--Neutral-300);
+
+    &::placeholder {
+      color: var(--Neutral-500);
+    }
+  }
+
+  button {
+    background-color: var(--Orange-500);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    color: var(--Neutral-900);
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: var(--Orange-700);
+    }
+  }
+}
+
+.upload-error {
+  color: var(--Orange-500);
+}
+
+.error-message {
+  color: var(--Orange-500);
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+
+/* Estilos del ticket generado */
+.generated-ticket {
+  width: min(calc(100% - 2rem), 600px);
+  margin: 6rem auto;
+  position: relative;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.ticket-data {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 4vw, 1.5rem);
+
+  & > div {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(0.5rem, 2.5vw, 1rem);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0.5rem, 2.5vw, 1rem);
+
+      h2 {
+        font-size: clamp(1rem, 5vw, 2.5rem);
+      }
+
+      h3 {
+        font-size: clamp(1rem, 5vw, 2rem);
+      }
+
+      P {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+      }
+    }
+  }
+}
+
+.logo {
+  width: clamp(1.25rem, 6vw, 2.5rem);
+}
+
+.avatar {
+  width: clamp(3.5rem, 12vw, 5rem);
+  height: clamp(3.5rem, 12vw, 5rem);
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.serie {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  bottom: 50%;
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  color: var(--Neutral-500);
+  transform: rotate(90deg);
+}

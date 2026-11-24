@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference ticket generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <section class="center">
+    <header class="heading">
+      <img src="images/logo-full.svg" alt="">
+    </header>
+
+    <main id="info-data">
+      <h1 class="title">Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p class="subtitle">Secure your spot at next year's biggest coding conference.</p>
+
+      <section class="upload-section">
+        <p>Upload Avatar</p>
+
+        <label class="upload-area">
+          <img src="images/icon-upload.svg" alt="" id="file-preview">
+
+          <p>Drag and drop or click to upload</p>
+
+          <input type="file" name="" id="file-upload">
+        </label>
+
+        <div>
+          <img src="images/icon-info.svg" alt="">
+          <p id="upload-error">Upload your photo (JPG or PNG, max size: 500kb)</p>
+        </div>
+      </section>
+
+      <form class="form-section">
+        <label for="">Full Name</label>
+        <input type="text" name="" id="name">
+        <label for="">Email Address</label>
+        <input type="email" name="" id="email" placeholder="example@email.com">
+        <p class="error-message">Please enter a valid email address.</p>
+        <label for="">GitHub Username</label>
+        <input type="text" name="" id="username" placeholder="@yourusername">
+        <button>Generate My Ticket</button>
+      </form>
+    </main>
+  </section>
+</body>
+</html>
